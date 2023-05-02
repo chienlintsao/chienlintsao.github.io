@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  
+div{
+    margin: 10px 0px;
+}
+
+span{
+    font-size: 72px;
+    margin: 32px 0;
+    padding: 0px 40px;
+    height: 100px;
+    display: inline-block;
+    line-height: 100px; 
+}
+
+
+#r_counter{
+    background-color: #FF7575;
+}
+
+#g_counter{
+    background-color: #02F78E;
+}
+
+#b_counter{
+    background-color: #84C1FF;
+}
+
+button {
+    height: 100px;
+    font-size: 36px;
+    border-radius: 8px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 72px;
+    margin: 32px 0;
+    height: 100px;
+    display: inline-block;
+    line-height: 100px;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+button:active {
+    background-color: #1e528e;
+}
