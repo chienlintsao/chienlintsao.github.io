@@ -44,3 +44,12 @@ $("#reset-btn").click(function(){
     g_counter.innerText = g_count;
     b_counter.innerText = b_count;
 });
+
+var lastTouchEnd = 0;
+document.addEventListener('touchend', function (event) {
+  var now = (new Date()).getTime();
+  if (now - lastTouchEnd <= 1) {
+    event.preventDefault();
+  }
+  lastTouchEnd = now;
+}, false);
