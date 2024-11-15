@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <script>
+        // 定義圖片清單
+        const images = [
+            "img/110464375_p12.png",
+            "img/121111345_p0.jpg",
+            "img/121901248_p0.jpg",
+            "img/122689265_p0.jpg",
+            "img/122689554_p0.jpg",
+            "img/122806670_p0.jpg",
+            "img/123426275_p1.jpg",
+            "img/Gb3aNtRbsAAzgoX.jpg",
+            "img/GbPn0MpbMAA7SI_.jpg",
+            "img/GbTsI98boAAXVvV.jpg",
+            "img/Gbx3XNgakAAMjUf.jpg",
+            "img/GQ911pHbwAABaxm.jpg",
+            "img/GYoYhEyaEAAPkAF.png",
+            "img/GYZD6M1XUAAmq91.jpg",
+
+        ];
+
+        // 隨機選擇圖片
+        const randomImage = images[Math.floor(Math.random() * images.length)];
+
+        // 跳轉到隨機選擇的圖片
+        window.location.href = randomImage;
+    </script>
+</head>
+<body>
+    <p>Redirecting to a random image...</p>
+</body>
+</html>
