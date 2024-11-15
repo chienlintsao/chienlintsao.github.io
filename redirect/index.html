@@ -20,19 +20,51 @@
 
 <body>
     <script>
-        fetch('images.json')
-            .then(response => response.json())
-            .then(images => {
-                console.log(images)
-                // 隨機選擇圖片
-                const randomImage = images[Math.floor(Math.random() * images.length)];
-                console.log(randomImage)
-                // 設定背景圖片
-                document.body.style.backgroundImage = `url(${randomImage})`;
-            })
-            .catch(error => {
-                console.error("Error loading images.json:", error);
-            });
+        let resizeTimeout;
+
+        function checkWindowSize() {
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+            console.log(`Iframe Width: ${width}, Height: ${height}`);
+
+            // 根據大小執行不同操作
+            if (width >= height) {
+                fetch('images.json')
+                    .then(response => response.json())
+                    .then(images => {
+                        // 隨機選擇圖片
+                        const randomImage = images[Math.floor(Math.random() * images.length)];
+                        console.log(randomImage)
+                        // 設定背景圖片
+                        document.body.style.backgroundImage = `url(${randomImage})`;
+                    })
+                    .catch(error => {
+                        console.error("Error loading images.json:", error);
+                    });
+            } else {
+                fetch('images_vertical.json')
+                    .then(response => response.json())
+                    .then(images => {
+                        // 隨機選擇圖片
+                        const randomImage = images[Math.floor(Math.random() * images.length)];
+                        console.log(randomImage)
+                        // 設定背景圖片
+                        document.body.style.backgroundImage = `url(${randomImage})`;
+                    })
+                    .catch(error => {
+                        console.error("Error loading images.json:", error);
+                    });
+            }
+        }
+
+        // 初始檢查
+        checkWindowSize();
+
+        // 在視窗調整大小時檢查
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(checkWindowSize, 500); // 設定延遲 500 毫秒
+        });
     </script>
 </body>
 
