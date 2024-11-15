@@ -20,30 +20,19 @@
 
 <body>
     <script>
-        // 定義圖片清單
-        const images = [
-            "img/110464375_p12.png",
-            "img/121111345_p0.jpg",
-            "img/121901248_p0.jpg",
-            "img/122689265_p0.jpg",
-            "img/122689554_p0.jpg",
-            "img/122806670_p0.jpg",
-            "img/123426275_p1.jpg",
-            "img/Gb3aNtRbsAAzgoX.jpg",
-            "img/GbPn0MpbMAA7SI_.jpg",
-            "img/GbTsI98boAAXVvV.jpg",
-            "img/Gbx3XNgakAAMjUf.jpg",
-            "img/GQ911pHbwAABaxm.jpg",
-            "img/GYoYhEyaEAAPkAF.png",
-            "img/GYZD6M1XUAAmq91.jpg",
-
-        ];
-
-        // 隨機選擇圖片
-        const randomImage = images[Math.floor(Math.random() * images.length)];
-
-        // 設定背景圖片
-        document.body.style.backgroundImage = `url(${randomImage})`;
+        fetch('images.json')
+            .then(response => response.json())
+            .then(images => {
+                console.log(images)
+                // 隨機選擇圖片
+                const randomImage = images[Math.floor(Math.random() * images.length)];
+                console.log(randomImage)
+                // 設定背景圖片
+                document.body.style.backgroundImage = `url(${randomImage})`;
+            })
+            .catch(error => {
+                console.error("Error loading images.json:", error);
+            });
     </script>
 </body>
 
