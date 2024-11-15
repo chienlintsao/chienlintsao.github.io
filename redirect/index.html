@@ -1,9 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting...</title>
+    <title>Random Background Image</title>
+    <style>
+        /* 使整個頁面填滿背景 */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+
+<body>
     <script>
         // 定義圖片清單
         const images = [
@@ -27,11 +42,9 @@
         // 隨機選擇圖片
         const randomImage = images[Math.floor(Math.random() * images.length)];
 
-        // 跳轉到隨機選擇的圖片
-        window.location.href = randomImage;
+        // 設定背景圖片
+        document.body.style.backgroundImage = `url(${randomImage})`;
     </script>
-</head>
-<body>
-    <p>Redirecting to a random image...</p>
 </body>
+
 </html>
